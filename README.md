@@ -24,7 +24,7 @@ A simple collection of Python scripts for working with PDF files:
 
 ## 📋 Prerequisites
 
-* Python 3.7+
+* Python 3.7+
 * [Poppler](https://poppler.freedesktop.org/) system package
 * pip packages:
 
@@ -32,11 +32,18 @@ A simple collection of Python scripts for working with PDF files:
   * `Pillow`
   * `PyPDF2`
 
-> **Note**: The project assumes you keep your virtual environment directory out of version control (e.g. named `venv/`). Add it to your `.gitignore`:
+> **Note**: The project assumes you keep your virtual environment directory out of version control (e.g., named `venv/`). Add it to your `.gitignore`:
 >
 > ```gitignore
 > venv/
 > ```
+
+---
+
+## 🔒 Security & Offline Use
+
+* **Local Processing Only**: All PDF conversions and merges happen entirely on your machine. The scripts do not perform any network calls or send data externally.
+* **Offline Operation**: Once you have installed the required dependencies (`pdf2image`, `Pillow`, `PyPDF2`, and Poppler), you can run the tools without any internet connection. Ideal for air-gapped or secure environments.
 
 ---
 
@@ -107,12 +114,9 @@ pdf-utility-suite/
 python pdf_to_jpeg.py input_pdf/ output_images/ [--dpi 200]
 ```
 
-* `input_pdf/`:
-  Folder containing one or more `.pdf` files.
-* `output_images/`:
-  Destination folder for JPEGs (will be cleaned first).
-* `--dpi`:
-  (optional) Resolution in dots-per-inch (default: `200`).
+* `input_pdf/`: Folder containing one or more `.pdf` files.
+* `output_images/`: Destination folder for JPEGs (will be cleaned first).
+* `--dpi`: (optional) Resolution in dots-per-inch (default: `200`).
 
 Each PDF creates its own subfolder under `output_images/`.
 
@@ -122,10 +126,8 @@ Each PDF creates its own subfolder under `output_images/`.
 python merge_pdfs.py input_pdf/ output_merged_pdf/
 ```
 
-* `input_pdf/`:
-  Folder containing one or more `.pdf` files.
-* `output_merged_pdf/`:
-  Destination folder for the merged PDF (will be cleaned first).
+* `input_pdf/`: Folder containing one or more `.pdf` files.
+* `output_merged_pdf/`: Destination folder for the merged PDF (will be cleaned first).
 
 Result: `output_merged_pdf/merged_output.pdf`
 
